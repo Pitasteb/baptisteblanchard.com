@@ -33,4 +33,4 @@ jobs:
           port: ${{ secrets.FTP_PORT }}
           local-dir: dist/
           server-dir: public_html/
-          delete-remote: true    # Supprime tout le contenu avant upload
+          dangerous-clean-slate: true    # Supprime tout le contenu avant upload
