@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
