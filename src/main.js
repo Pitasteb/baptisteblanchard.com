@@ -1,1 +1,0 @@
-console.log("Site Eleventy Hello World avec style!");

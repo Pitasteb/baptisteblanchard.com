@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+}
+
+const { title = 'Baptiste Blanchard' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen flex flex-col bg-white text-gray-900">
+		<header class="border-b border-gray-200">
+			<nav class="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
+				<a href={import.meta.env.BASE_URL} class="font-semibold tracking-tight">Baptiste Blanchard</a>
+				<div class="flex gap-6 text-sm">
+					<a href={`${import.meta.env.BASE_URL}/photographie`} class="hover:text-gray-500">Photographie</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="flex-1 max-w-4xl w-full mx-auto px-6 py-12">
+			<slot />
+		</main>
+
+		<footer class="border-t border-gray-200">
+			<div class="max-w-4xl mx-auto px-6 py-6 text-sm text-gray-500">
+				© {new Date().getFullYear()} Baptiste Blanchard
+			</div>
+		</footer>
+	</body>
+</html>
