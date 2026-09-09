@@ -30,21 +30,6 @@ const canonicalURL = 'https://pitasteb.github.io/baptisteblanchard.com/';
 		<meta property="og:description" content={description} />
 	</head>
 	<body class="min-h-screen flex flex-col bg-white text-gray-900">
-		<header class="border-b border-gray-200">
-			<nav class="max-w-4xl mx-auto flex items-center gap-3 px-6 py-4">
-				<a href={import.meta.env.BASE_URL} class="flex items-center gap-3">
-					<img
-						src={`${import.meta.env.BASE_URL}/Baptiste-BLANCHARD-165px.png`}
-						alt="Portrait de Baptiste Blanchard"
-						width="40"
-						height="40"
-						class="rounded-full"
-					/>
-					<span class="font-semibold tracking-tight">Baptiste Blanchard</span>
-				</a>
-			</nav>
-		</header>
-
 		<main class="flex-1 max-w-4xl w-full mx-auto px-6 py-12">
 			<slot />
 		</main>
