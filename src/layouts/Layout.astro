@@ -3,9 +3,15 @@ import '../styles/global.css';
 
 interface Props {
 	title?: string;
+	description?: string;
 }
 
-const { title = 'Baptiste Blanchard' } = Astro.props;
+const {
+	title = 'Baptiste Blanchard',
+	description = "Baptiste Blanchard : machines-outils de tôlerie, photographie et hébergement web, en Vendée.",
+} = Astro.props;
+
+const canonicalURL = 'https://pitasteb.github.io/baptisteblanchard.com/';
 ---
 
 <!doctype html>
@@ -16,14 +22,17 @@ const { title = 'Baptiste Blanchard' } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.svg`} />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
 	</head>
 	<body class="min-h-screen flex flex-col bg-white text-gray-900">
 		<header class="border-b border-gray-200">
-			<nav class="max-w-4xl mx-auto flex items-center justify-between px-6 py-4">
+			<nav class="max-w-4xl mx-auto flex items-center px-6 py-4">
 				<a href={import.meta.env.BASE_URL} class="font-semibold tracking-tight">Baptiste Blanchard</a>
-				<div class="flex gap-6 text-sm">
-					<a href={`${import.meta.env.BASE_URL}/photographie`} class="hover:text-gray-500">Photographie</a>
-				</div>
 			</nav>
 		</header>
 
